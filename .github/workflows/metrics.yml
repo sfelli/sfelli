@@ -10,7 +10,7 @@ jobs:
 
       # Classic template with header and repositories sections
       - name: Classic template
-        uses: lowlighter/metrics@master
+        uses: sfelli/metrics@master
         with:
           filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
