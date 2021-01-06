@@ -1,8 +1,9 @@
-name: Metrics
+name: GitHub metrics
 on:
-  # Schedule updates
-  schedule: [{cron: "0 * * * *"}]
-  push: {branches: "master"}
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    branches: "master"
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
