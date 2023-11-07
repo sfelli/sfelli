@@ -1,0 +1,21 @@
+name: PR Branch Name
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  commentBranchName:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment PR with Branch Name
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const branchName = context.payload.pull_request.head.ref;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `This PR is using the branch: \`${branchName}\``
+            });
